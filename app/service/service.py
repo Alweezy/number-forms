@@ -1,4 +1,5 @@
 from app.service import errors
+from app.service import literals
 
 def compute_output(value):
   if not value.isnumeric():
@@ -6,10 +7,10 @@ def compute_output(value):
 
   output = int(value)
   if output % 7 == 0 and output % 5 == 0:
-    return "LR"
+    return literals.LR
   elif output % 5 == 0:
-    return "L"
+    return literals.L
   elif output % 7 == 0:
-    return "R"
+    return literals.R
   else:
     return value
