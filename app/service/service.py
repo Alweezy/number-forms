@@ -1,6 +1,8 @@
 from app.service import errors
 
 def compute_output(value):
+  if not value.isnumeric():
+    raise errors.NotANumberError("Invalid input. A numeric value was expected.")
 
   output = int(value)
   if output % 7 == 0 and output % 5 == 0:
